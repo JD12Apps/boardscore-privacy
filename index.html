@@ -4,198 +4,350 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BoardScore — Privacy Policy</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg: #F6F8F6;
+      --surface: #FFFFFF;
+      --border: #D4E0D4;
+      --border-light: #E8F0E8;
+      --sage: #4A7C5A;
+      --sage-light: #EDF5EF;
+      --text: #2A3B2C;
+      --sub: #8BA08E;
+      --gold: #C4963A;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #F6F8F6;
-      color: #2A3B2C;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
       font-size: 16px;
     }
 
+    /* ── Lang toggle ── */
+    .lang-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .lang-btn {
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--sub);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: all 0.15s;
+    }
+
+    .lang-btn.active {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: #fff;
+    }
+
+    .lang-btn:hover:not(.active) {
+      border-color: var(--sage);
+      color: var(--sage);
+    }
+
+    /* ── Layout ── */
     .container {
-      max-width: 720px;
+      max-width: 740px;
       margin: 0 auto;
       padding: 48px 24px 80px;
     }
 
+    /* ── Header ── */
     header {
-      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 48px;
     }
 
-    .app-name {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(74, 124, 90, 0.15);
+    }
+
+    .app-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #4A7C5A;
+      color: var(--sage);
       margin-bottom: 8px;
     }
 
     h1 {
       font-size: 32px;
       font-weight: 700;
-      color: #2A3B2C;
+      color: var(--text);
       margin-bottom: 8px;
     }
 
     .last-updated {
       font-size: 13px;
-      color: #8BA08E;
+      color: var(--sub);
+      background: var(--sage-light);
+      padding: 4px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 8px;
     }
 
+    /* ── Sections ── */
     section {
-      margin-bottom: 36px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px 20px;
+      margin-bottom: 16px;
+    }
+
+    section.intro {
+      background: var(--sage-light);
+      border-color: transparent;
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      color: #2A3B2C;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #E2EAE2;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .icon {
+      width: 28px;
+      height: 28px;
+      background: var(--sage-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
     }
 
     p {
       margin-bottom: 12px;
-      color: #2A3B2C;
+      color: var(--text);
     }
 
+    p:last-child { margin-bottom: 0; }
+
     ul {
-      margin: 8px 0 12px 0;
-      padding-left: 20px;
+      margin: 8px 0 12px 4px;
+      padding-left: 16px;
     }
 
     li {
       margin-bottom: 6px;
-      color: #2A3B2C;
+      color: var(--text);
     }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; margin: 4px 0 8px; border-radius: 10px; border: 1px solid var(--border); }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 12px 0;
       font-size: 14px;
     }
 
     th {
-      background: #EDF2ED;
+      background: var(--sage-light);
       text-align: left;
-      padding: 10px 12px;
+      padding: 10px 14px;
       font-weight: 600;
-      color: #2A3B2C;
-      border: 1px solid #D4E0D4;
+      color: var(--sage);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     td {
-      padding: 10px 12px;
-      border: 1px solid #D4E0D4;
+      padding: 10px 14px;
+      border-top: 1px solid var(--border-light);
       vertical-align: top;
     }
 
-    tr:nth-child(even) td {
-      background: #F9FBF9;
-    }
+    tr:first-child td { border-top: none; }
 
-    a {
-      color: #4A7C5A;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-box {
-      background: #FFFFFF;
-      border: 1px solid #D4E0D4;
+    /* ── Third-party cards ── */
+    .provider {
+      background: var(--bg);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px 24px;
-      margin-top: 8px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
     }
 
-    .contact-box p {
+    .provider:last-child { margin-bottom: 0; }
+
+    .provider-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
       margin-bottom: 4px;
     }
 
-    footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid #D4E0D4;
+    .provider p {
+      font-size: 14px;
+      color: var(--sub);
+      margin-bottom: 4px;
+    }
+
+    .provider a {
       font-size: 13px;
-      color: #8BA08E;
+      color: var(--sage);
+      text-decoration: none;
+    }
+
+    .provider a:hover { text-decoration: underline; }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .contact-box p { margin-bottom: 4px; font-size: 15px; }
+
+    a {
+      color: var(--sage);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--sub);
       text-align: center;
+    }
+
+    /* ── Language switching ── */
+    [lang-content] { display: none; }
+    body.lang-en [lang-content="en"] { display: contents; }
+    body.lang-pl [lang-content="pl"] { display: contents; }
+
+    @media (max-width: 600px) {
+      .container { padding: 32px 16px 60px; }
+      section { padding: 20px 18px 16px; }
+      h1 { font-size: 26px; }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <p class="app-name">BoardScore</p>
+<body class="lang-en">
+
+<!-- Language bar -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('pl')">PL</button>
+</div>
+
+<div class="container">
+
+  <!-- ── Header ── -->
+  <header>
+    <img src="logo.png" alt="BoardScore" class="logo" />
+    <p class="app-label">BoardScore</p>
+
+    <span lang-content="en">
       <h1>Privacy Policy</h1>
-      <p class="last-updated">Last updated: April 23, 2026</p>
-    </header>
+      <span class="last-updated">Last updated: April 23, 2026</span>
+    </span>
+    <span lang-content="pl">
+      <h1>Polityka Prywatności</h1>
+      <span class="last-updated">Ostatnia aktualizacja: 23 kwietnia 2026</span>
+    </span>
+  </header>
 
-    <section>
-      <p>
-        BoardScore ("we", "our", or "us") is a mobile application for managing your board game
-        collection and tracking game session results. This Privacy Policy explains what data
-        we collect, why we collect it, and how we protect it.
-      </p>
-      <p>
-        By using BoardScore, you agree to the practices described in this policy.
-      </p>
-    </section>
+  <!-- ── Intro ── -->
+  <section class="intro">
+    <span lang-content="en">
+      <p>BoardScore is a mobile app for managing your board game collection and tracking session results. This Privacy Policy explains what data we collect, why, and how we protect it.</p>
+      <p>By using BoardScore, you agree to the practices described in this policy.</p>
+    </span>
+    <span lang-content="pl">
+      <p>BoardScore to aplikacja mobilna do zarządzania kolekcją gier planszowych i śledzenia wyników sesji. Ta Polityka Prywatności wyjaśnia, jakie dane zbieramy, w jakim celu i jak je chronimy.</p>
+      <p>Korzystając z BoardScore, akceptujesz praktyki opisane w tej polityce.</p>
+    </span>
+  </section>
 
-    <section>
-      <h2>1. Information We Collect</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Data</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Account</strong></td>
-            <td>Email address, display name</td>
-            <td>Account creation and identification</td>
-          </tr>
-          <tr>
-            <td><strong>Game library</strong></td>
-            <td>Games added to collection, favorites</td>
-            <td>Core app functionality</td>
-          </tr>
-          <tr>
-            <td><strong>Session history</strong></td>
-            <td>Game played, player names, scores/places, date, notes</td>
-            <td>Score tracking and history</td>
-          </tr>
-          <tr>
-            <td><strong>Purchases</strong></td>
-            <td>Subscription status (Pro tier)</td>
-            <td>Unlocking premium features</td>
-          </tr>
-          <tr>
-            <td><strong>App preferences</strong></td>
-            <td>Language, dark mode, onboarding status</td>
-            <td>Personalization, stored locally on device</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        We do <strong>not</strong> collect precise location, photos, contacts, or any sensitive
-        personal data beyond what is listed above.
-      </p>
-    </section>
+  <!-- ── 1. Data collected ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">📋</span> 1. Information We Collect</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Data</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Account</strong></td><td>Email address, display name</td><td>Account creation and identification</td></tr>
+            <tr><td><strong>Game library</strong></td><td>Games added to collection, favorites</td><td>Core app functionality</td></tr>
+            <tr><td><strong>Session history</strong></td><td>Game played, player names, scores/places, date, notes</td><td>Score tracking and history</td></tr>
+            <tr><td><strong>Purchases</strong></td><td>Subscription status (Pro tier)</td><td>Unlocking premium features</td></tr>
+            <tr><td><strong>App preferences</strong></td><td>Language, dark mode, onboarding status</td><td>Personalization — stored locally on device</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We do <strong>not</strong> collect precise location, photos, contacts, or any other sensitive personal data.</p>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">📋</span> 1. Jakie dane zbieramy</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Kategoria</th><th>Dane</th><th>Cel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Konto</strong></td><td>Adres email, nazwa wyświetlana</td><td>Tworzenie konta i identyfikacja</td></tr>
+            <tr><td><strong>Biblioteka gier</strong></td><td>Gry dodane do kolekcji, ulubione</td><td>Podstawowa funkcja aplikacji</td></tr>
+            <tr><td><strong>Historia sesji</strong></td><td>Gra, nazwy graczy, wyniki/miejsca, data, notatki</td><td>Śledzenie wyników i historia</td></tr>
+            <tr><td><strong>Zakupy</strong></td><td>Status subskrypcji (plan Pro)</td><td>Odblokowanie premium funkcji</td></tr>
+            <tr><td><strong>Preferencje aplikacji</strong></td><td>Język, tryb ciemny, status onboardingu</td><td>Personalizacja — przechowywane lokalnie</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Nie</strong> zbieramy lokalizacji, zdjęć, kontaktów ani innych wrażliwych danych osobowych.</p>
+    </span>
+  </section>
 
-    <section>
-      <h2>2. How We Use Your Data</h2>
+  <!-- ── 2. How we use ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">🎯</span> 2. How We Use Your Data</h2>
       <ul>
         <li>Providing and maintaining the BoardScore service</li>
         <li>Syncing your game collection and session history across devices</li>
@@ -204,94 +356,173 @@
         <li>Diagnosing errors and improving app stability</li>
       </ul>
       <p>We do <strong>not</strong> sell, rent, or share your personal data with advertisers or data brokers.</p>
-    </section>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">🎯</span> 2. Jak używamy Twoich danych</h2>
+      <ul>
+        <li>Świadczenie i utrzymanie usługi BoardScore</li>
+        <li>Synchronizacja kolekcji gier i historii sesji między urządzeniami</li>
+        <li>Weryfikacja statusu subskrypcji w celu odblokowania funkcji Pro</li>
+        <li>Obsługa kont anonimowych (gość z ograniczonymi funkcjami)</li>
+        <li>Diagnozowanie błędów i poprawa stabilności aplikacji</li>
+      </ul>
+      <p><strong>Nie</strong> sprzedajemy, nie wynajmujemy ani nie udostępniamy Twoich danych osobowych reklamodawcom ani brokerom danych.</p>
+    </span>
+  </section>
 
-    <section>
-      <h2>3. Third-Party Services</h2>
+  <!-- ── 3. Third parties ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">🔗</span> 3. Third-Party Services</h2>
+      <div class="provider">
+        <p class="provider-name">Supabase</p>
+        <p>Backend infrastructure — authentication, database, and real-time sync. Your data is stored with row-level security: only you can access your own records.</p>
+        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy →</a>
+      </div>
+      <div class="provider">
+        <p class="provider-name">RevenueCat</p>
+        <p>Manages in-app subscriptions and purchase verification. Receives anonymous app user ID and purchase receipt data — not your email or name.</p>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy →</a>
+      </div>
+      <div class="provider">
+        <p class="provider-name">BoardGameGeek (BGG)</p>
+        <p>Game data (names, descriptions, images, ratings) is sourced from the BGG public API. No personal data is sent to BGG.</p>
+        <a href="https://boardgamegeek.com/privacy" target="_blank" rel="noopener">boardgamegeek.com/privacy →</a>
+      </div>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">🔗</span> 3. Usługi zewnętrzne</h2>
+      <div class="provider">
+        <p class="provider-name">Supabase</p>
+        <p>Infrastruktura backendowa — uwierzytelnianie, baza danych i synchronizacja w czasie rzeczywistym. Dane przechowywane z zasadami bezpieczeństwa na poziomie wierszy: tylko Ty masz dostęp do swoich rekordów.</p>
+        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy →</a>
+      </div>
+      <div class="provider">
+        <p class="provider-name">RevenueCat</p>
+        <p>Zarządza subskrypcjami i weryfikacją zakupów. Otrzymuje anonimowe ID użytkownika i dane paragonu — nie email ani imię.</p>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy →</a>
+      </div>
+      <div class="provider">
+        <p class="provider-name">BoardGameGeek (BGG)</p>
+        <p>Dane gier (nazwy, opisy, zdjęcia, oceny) pochodzą z publicznego API BGG. Żadne dane osobowe nie są wysyłane do BGG.</p>
+        <a href="https://boardgamegeek.com/privacy" target="_blank" rel="noopener">boardgamegeek.com/privacy →</a>
+      </div>
+    </span>
+  </section>
 
-      <p><strong>Supabase</strong><br />
-      We use <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a> as our
-      backend infrastructure (authentication, database, and real-time sync). Your data is stored
-      in a Supabase PostgreSQL database with row-level security — only you can access your own data.
-      Supabase Privacy Policy: <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></p>
+  <!-- ── 4. Retention ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">🗓</span> 4. Data Retention</h2>
+      <p>Your data is retained as long as your account exists. You can delete your account at any time from <strong>Settings → Delete Account</strong>. Upon deletion, all your data (game library, session history, profile) is permanently removed from our servers within 30 days.</p>
+      <p>App preferences stored locally on your device are removed when you uninstall the app.</p>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">🗓</span> 4. Okres przechowywania danych</h2>
+      <p>Twoje dane są przechowywane tak długo, jak istnieje Twoje konto. Możesz usunąć konto w dowolnym momencie w <strong>Ustawienia → Usuń konto</strong>. Po usunięciu wszystkie Twoje dane (kolekcja, historia sesji, profil) zostaną trwale usunięte z naszych serwerów w ciągu 30 dni.</p>
+      <p>Preferencje aplikacji przechowywane lokalnie na urządzeniu są usuwane przy odinstalowaniu aplikacji.</p>
+    </span>
+  </section>
 
-      <p><strong>RevenueCat</strong><br />
-      We use <a href="https://www.revenuecat.com" target="_blank" rel="noopener">RevenueCat</a>
-      to manage in-app subscriptions and verify purchase entitlements. RevenueCat receives your
-      anonymous app user ID and purchase receipt data. It does not receive your email or name.
-      RevenueCat Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></p>
+  <!-- ── 5. Security ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">🔒</span> 5. Data Security</h2>
+      <p>All data is transmitted over HTTPS. Database access is protected by row-level security — your data can only be accessed by your authenticated user ID. We do not store passwords; authentication is handled by Supabase Auth with secure hashing.</p>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">🔒</span> 5. Bezpieczeństwo danych</h2>
+      <p>Wszystkie dane są przesyłane przez HTTPS. Dostęp do bazy danych jest chroniony zasadami bezpieczeństwa na poziomie wierszy — Twoje dane mogą być dostępne tylko przez Twoje uwierzytelnione ID użytkownika. Nie przechowujemy haseł — uwierzytelnianie obsługuje Supabase Auth z bezpiecznym hashowaniem.</p>
+    </span>
+  </section>
 
-      <p><strong>BoardGameGeek (BGG)</strong><br />
-      Game data (names, descriptions, images, ratings) is sourced from the
-      <a href="https://boardgamegeek.com" target="_blank" rel="noopener">BoardGameGeek</a> public
-      API and catalog. We do not send any personal data to BGG.</p>
-    </section>
+  <!-- ── 6. Children ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">👶</span> 6. Children's Privacy</h2>
+      <p>BoardScore is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such data, please contact us and we will delete it promptly.</p>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">👶</span> 6. Prywatność dzieci</h2>
+      <p>BoardScore nie jest skierowany do dzieci poniżej 13 roku życia. Nie zbieramy świadomie danych osobowych dzieci poniżej 13 roku życia. Jeśli uważasz, że przypadkowo zebraliśmy takie dane, skontaktuj się z nami — usuniemy je niezwłocznie.</p>
+    </span>
+  </section>
 
-    <section>
-      <h2>4. Data Retention</h2>
-      <p>
-        Your data is retained as long as your account exists. You can delete your account at any
-        time from <strong>Settings → Delete Account</strong>. Upon deletion, all your data
-        (game library, session history, profile) is permanently removed from our servers within 30 days.
-      </p>
-      <p>
-        App preferences stored locally on your device (language, dark mode) are removed when you
-        uninstall the app.
-      </p>
-    </section>
-
-    <section>
-      <h2>5. Data Security</h2>
-      <p>
-        All data is transmitted over HTTPS. Database access is protected by row-level security
-        policies — your data can only be accessed by your authenticated user ID. We do not store
-        passwords; authentication is handled by Supabase Auth (email/password with secure hashing,
-        or anonymous sign-in).
-      </p>
-    </section>
-
-    <section>
-      <h2>6. Children's Privacy</h2>
-      <p>
-        BoardScore is not directed at children under 13. We do not knowingly collect personal
-        information from children under 13. If you believe we have inadvertently collected such
-        data, please contact us and we will delete it promptly.
-      </p>
-    </section>
-
-    <section>
-      <h2>7. Your Rights</h2>
-      <p>You have the right to:</p>
+  <!-- ── 7. Your rights ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">⚖️</span> 7. Your Rights</h2>
       <ul>
         <li><strong>Access</strong> — request a copy of the data we hold about you</li>
-        <li><strong>Correction</strong> — update your display name from Settings</li>
+        <li><strong>Correction</strong> — update your display name in Settings</li>
         <li><strong>Deletion</strong> — delete your account and all associated data from Settings</li>
         <li><strong>Portability</strong> — request an export of your session history</li>
       </ul>
       <p>To exercise any of these rights, contact us at the email below.</p>
-    </section>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">⚖️</span> 7. Twoje prawa</h2>
+      <ul>
+        <li><strong>Dostęp</strong> — zażądaj kopii danych, które posiadamy o Tobie</li>
+        <li><strong>Korekta</strong> — zaktualizuj swoją nazwę wyświetlaną w Ustawieniach</li>
+        <li><strong>Usunięcie</strong> — usuń konto i wszystkie powiązane dane w Ustawieniach</li>
+        <li><strong>Przenoszalność</strong> — zażądaj eksportu historii sesji</li>
+      </ul>
+      <p>Aby skorzystać z tych praw, skontaktuj się z nami pod adresem email poniżej.</p>
+    </span>
+  </section>
 
-    <section>
-      <h2>8. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. We will notify you of significant
-        changes by updating the "Last updated" date at the top of this page. Continued use of
-        the app after changes constitutes acceptance of the updated policy.
-      </p>
-    </section>
+  <!-- ── 8. Changes ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">📝</span> 8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">📝</span> 8. Zmiany polityki</h2>
+      <p>Możemy od czasu do czasu aktualizować tę Politykę Prywatności. O istotnych zmianach poinformujemy, aktualizując datę "Ostatnia aktualizacja" u góry tej strony. Dalsze korzystanie z aplikacji po zmianach oznacza akceptację zaktualizowanej polityki.</p>
+    </span>
+  </section>
 
-    <section>
-      <h2>9. Contact</h2>
+  <!-- ── 9. Contact ── -->
+  <section>
+    <span lang-content="en">
+      <h2><span class="icon">✉️</span> 9. Contact</h2>
       <div class="contact-box">
         <p><strong>Jarosław Dziołak</strong></p>
         <p>Developer of BoardScore</p>
-        <p>Email: <a href="mailto:jaroslaw.dziolak@gmail.com">jaroslaw.dziolak@gmail.com</a></p>
+        <p>Email: <a href="mailto:jaroslawdziolak.12ac@gmail.com">jaroslawdziolak.12ac@gmail.com</a></p>
       </div>
-    </section>
+    </span>
+    <span lang-content="pl">
+      <h2><span class="icon">✉️</span> 9. Kontakt</h2>
+      <div class="contact-box">
+        <p><strong>Jarosław Dziołak</strong></p>
+        <p>Twórca aplikacji BoardScore</p>
+        <p>Email: <a href="mailto:jaroslawdziolak.12ac@gmail.com">jaroslawdziolak.12ac@gmail.com</a></p>
+      </div>
+    </span>
+  </section>
 
-    <footer>
-      &copy; 2026 Jarosław Dziołak · BoardScore · All rights reserved
-    </footer>
-  </div>
+  <footer>
+    &copy; 2026 Jarosław Dziołak · BoardScore
+  </footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+  }
+
+  // Auto-detect browser language
+  const browserLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
+  setLang(browserLang);
+</script>
+
 </body>
 </html>
